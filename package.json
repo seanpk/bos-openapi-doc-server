@@ -1,0 +1,40 @@
+{
+  "name": "bos-openapi-doc-server",
+  "version": "1.0.0-beta.0",
+  "description": "BlueOak Server Middleware to serve OpenAPI (Swagger) docs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ignore-pattern node_modules **/*.js",
+    "test": "npm run lint && mocha --check-leaks --globals services,__appDir test/unit",
+    "preversion": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seanpk/bos-openapi-doc-server.git"
+  },
+  "keywords": [
+    "swagger",
+    "openapi",
+    "docs",
+    "blueoak",
+    "express",
+    "middleware"
+  ],
+  "author": "Sean Kennedy <seankennedy@acm.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seanpk/bos-openapi-doc-server/issues"
+  },
+  "homepage": "https://github.com/seanpk/bos-openapi-doc-server#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "redoc": "^1.8.0",
+    "whiskers": "^0.4.0"
+  },
+  "devDependencies": {
+    "blueoak-server": "^2.9.1",
+    "eslint": "^3.14.1",
+    "eslint-config-defaults": "^9.0.0",
+    "mocha": "^3.2.0"
+  }
+}
