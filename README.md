@@ -39,7 +39,7 @@ In your server config (e.g. `config/default.json`):
     * `specUrl`: the URL where BOS is serving the JSON representation of the OpenAPI definition
     * `redocSrc`: the location of the source file for ReDoc, if it is available locally
     * `redocUrl`: the location of the ReDoc source if it is to be retrieved over the network
-    * the default template at <`templates/openapi-doc.html` is a good starting point for customization
+    * the default template at [`templates/openapi-doc.html`](./templates/openapi-doc.html) is a good starting point for customization
 
 ### sample `default.json` config
 
