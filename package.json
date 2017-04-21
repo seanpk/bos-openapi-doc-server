@@ -28,7 +28,6 @@
   "homepage": "https://github.com/seanpk/bos-openapi-doc-server#readme",
   "dependencies": {
     "lodash": "^4.17.4",
-    "redoc": "^1.8.0",
     "whiskers": "^0.4.0"
   },
   "devDependencies": {
