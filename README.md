@@ -39,7 +39,7 @@ In your server config (e.g. `config/default.json`):
     * `redocUrl`: the location of the ReDoc source if it is to be retrieved over the network
     * `redocOptions`: a JavaScript Object into which the `swagger.docPublish.redocOptions` object will be passed
   * the default template at [`templates/openapi-doc.html`](./templates/openapi-doc.html) is a good starting point for customization
-* `swagger.docPublish.redocOptions` (optional): an object with any customizations to ReDocs behavior following the descriptions of the [`redoc` tag attributes](https://github.com/Rebilly/redoc#redoc-tag-attributes) in camelCase
+* `swagger.docPublish.redocOptions` (optional): an object with any customizations to ReDocs behavior following the descriptions of the [`<redoc>` tag attributes](https://github.com/Rebilly/redoc#redoc-tag-attributes) in camelCase
 
 ### sample `default.json` config
 
