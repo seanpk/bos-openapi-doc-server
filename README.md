@@ -21,43 +21,41 @@ Since this is BlueOak Server middleware, it won't be used unless you configure i
 In your server config (e.g. `config/default.json`):
 
 1. add `"bos-openapi-doc-server"` to your list of `"middleware"`
-2. ensure the config setting `swagger.serve` is set to `true`
-3. customize what and where the docs get served in the `swagger.docPublish` object
+2. customize what and where the docs get served in the `swagger.docPublish` object
 
 ### list of config options affecting this functionality
 
-* `swagger.serve`: whether BlueOak Server should expose your swagger specs to the network (BOS default: `true`)
-* `swagger.context`: where those specs should be served from (BOS default: `/swagger`)
-* `swagger.docPublish.context`: where the ReDoc-rendered specs should be served from (default: `/docs`)
-* `swagger.docPublish.redocUrl`: (optional) provides the ability to override where to get ReDoc from
-  * (by default the [latest published `redoc.min.js` is used from GitHub](https://github.com/Rebilly/redoc#releases))
+* `swagger.docPublish.context` (default: `/docs`): where the ReDoc-rendered specs should be served from
+* `swagger.docPublish.redocUrl` (optional): provides the ability to override where to get ReDoc from
+  * by default the [latest published `redoc.min.js` is used from GitHub](https://github.com/Rebilly/redoc#releases)
   * you can also use a file path if you want to use a local copy
-* `swagger.docPublish.templatePath`: (optional) facilitates using [your own custom ReDoc template](https://github.com/Rebilly/redoc#configuration)
+* `swagger.docPublish.templatePath` (optional): facilitates using [your own custom ReDoc template](https://github.com/Rebilly/redoc#configuration)
   * the template may use [whiskers](https://github.com/gsf/whiskers.js) syntax to have the follow variables added:
     * `title`: the title for the spec given in the OpenAPI definition
     * `version`: the version of the spec given in the OpenAPI definition
+    * `specObject`: a JavaScript Object representing the specification
     * `specUrl`: the URL where BOS is serving the JSON representation of the OpenAPI definition
     * `redocSrc`: the location of the source file for ReDoc, if it is available locally
     * `redocUrl`: the location of the ReDoc source if it is to be retrieved over the network
-    * the default template at [`templates/openapi-doc.html`](./templates/openapi-doc.html) is a good starting point for customization
+  * the default template at [`templates/openapi-doc.html`](./templates/openapi-doc.html) is a good starting point for customization
 
 ### sample `default.json` config
 
 ```json
 {
-	"express": {
-		"port": "3003",
-		"middleware": [
+  "express": {
+    "port": "3003",
+    "middleware": [
       "bos-openapi-doc-server",
-			"bodyParser"
-		]
-	},
-	"cluster": {
-		"maxWorkers": 1
-	},
-	"bodyParser": {
-		"json": {}
-	},
+      "bodyParser"
+    ]
+  },
+  "cluster": {
+    "maxWorkers": 1
+  },
+  "bodyParser": {
+    "json": {}
+  },
   "swagger": {
     "serve": true,
     "useLocalhost": true,

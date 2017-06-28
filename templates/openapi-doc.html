@@ -16,11 +16,18 @@
     </style>
   </head>
   <body>
-    <redoc spec-url="{specUrl}"></redoc>
+    <redoc></redoc>
+    
     {if redocSrc}
     <script>{redocSrc}</script>
     {else}
     <script src="{redocUrl}"></script>
     {/if}
+
+    <script>
+        var specObject = {specObject};
+        var specUrl = "{specUrl}";
+        Redoc.init(specUrl || specObject);
+    </script>
   </body>
 </html>
