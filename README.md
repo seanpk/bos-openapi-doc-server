@@ -25,9 +25,10 @@ In your server config (e.g. `config/default.json`):
 
 ### list of config options affecting this functionality
 
-* `swagger.docPublish.context` (default: `/docs`): where the ReDoc-rendered specs should be served from
+* `swagger.docPublish.context` (optional): where the ReDoc-rendered specs should be served from
+  * default: `"/docs"`
 * `swagger.docPublish.redocUrl` (optional): provides the ability to override where to get ReDoc from
-  * by default the [latest published `redoc.min.js` is used from GitHub](https://github.com/Rebilly/redoc#releases)
+  * default: the URL for the [v1.x.x published `redoc.min.js` from GitHub](https://github.com/Rebilly/redoc#releases)
   * you can also use a file path if you want to use a local copy
 * `swagger.docPublish.templatePath` (optional): facilitates using [your own custom ReDoc template](https://github.com/Rebilly/redoc#configuration)
   * the template may use [whiskers](https://github.com/gsf/whiskers.js) syntax to have the follow variables added:
@@ -72,11 +73,11 @@ In your server config (e.g. `config/default.json`):
     "docPublish": {
       "context": "/docs",
       "templatePath": "lib/templates/my-spec-docs.html",
-      "redocOptions: {
-        scrollYOffset: 50,
-        suppressWarnings: true,
-        lazyRendering: true,
-        requiredPropsFirst: true
+      "redocOptions": {
+        "scrollYOffset": 50,
+        "suppressWarnings": true,
+        "lazyRendering": true,
+        "requiredPropsFirst": true
       }
     }
   }
