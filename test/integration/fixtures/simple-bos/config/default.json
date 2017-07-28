@@ -1,0 +1,24 @@
+{
+  "express": {
+    "port": "3302",
+    "middleware": [
+      "bos-openapi-doc-server"
+    ]
+  },
+  "cluster": {
+    "maxWorkers": 1
+  },
+  "swagger": {
+    "serve": true,
+    "useLocalhost": true,
+    "docPublish": {
+      "context": "/api-docs",
+      "redocOptions": {
+        "scrollYOffset": 50,
+        "suppressWarnings": true,
+        "lazyRendering": true,
+        "requiredPropsFirst": true
+      }
+    }
+  }
+}

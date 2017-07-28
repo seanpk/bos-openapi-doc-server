@@ -1,0 +1,9 @@
+{
+  "ext": ".js,.json,.yaml",
+  "ignore": [
+    "test/unit/"
+  ],
+  "watch": [
+    "."
+  ]
+}

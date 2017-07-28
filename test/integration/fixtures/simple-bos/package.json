@@ -1,0 +1,12 @@
+{
+  "name": "simple-bos",
+  "version": "0.0.0",
+  "description": "A simple BlueOak Server for testing that bos-openapi-doc-server works",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sean Kennedy <seankennedy@acm.org>",
+  "license": "MIT"
+}

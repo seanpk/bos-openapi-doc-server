@@ -4,8 +4,10 @@
   "description": "BlueOak Server Middleware to serve OpenAPI (Swagger) docs",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --ignore-pattern node_modules **/*.js",
-    "test": "npm run lint && mocha --check-leaks --globals services,__appDir test/unit",
+    "dev-test": "nodemon test/integration/fixtures/simple-bos/index.js",
+    "test-style": "eslint --ignore-pattern node_modules **/*.js",
+    "test-unit": "mocha --check-leaks --globals services,__appDir test/unit",
+    "test": "npm run test-style && npm run test-unit",
     "preversion": "npm test"
   },
   "repository": {
@@ -31,11 +33,12 @@
     "whiskers": "^0.4.0"
   },
   "devDependencies": {
-    "blueoak-server": "^2.9.1",
+    "blueoak-server": "^2.9.3",
     "chai": "^4.1.0",
     "eslint": "^3.14.1",
     "eslint-config-defaults": "^9.0.0",
     "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
     "rewire": "^2.5.2"
   }
 }
