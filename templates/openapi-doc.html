@@ -18,18 +18,23 @@
   </head>
   <body>
     <redoc></redoc>
-    
+
     {if redocSrc}
-    <script>{redocSrc}</script>
+    <script>
+      {redocSrc}
+    </script>
     {else}
     <script src="{redocUrl}"></script>
     {/if}
 
     <script>
-        var specObject = {specObject};
-        var specUrl = "{specUrl}";
+        {if specObject}
+        var spec = {specObject};
+        {else}
+        var spec = "{specUrl}";
+        {/if}
         var redocOptions = {redocOptions};
-        Redoc.init(specUrl || specObject, redocOptions);
+        Redoc.init(spec, redocOptions);
     </script>
   </body>
 </html>
