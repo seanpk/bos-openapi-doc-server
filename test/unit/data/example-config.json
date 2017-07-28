@@ -1,0 +1,37 @@
+{
+  "express": {
+    "port": "3003",
+    "middleware": [
+      "bos-openapi-doc-server",
+      "bodyParser"
+    ]
+  },
+  "cluster": {
+    "maxWorkers": 1
+  },
+  "bodyParser": {
+    "json": {}
+  },
+  "swagger": {
+    "serve": true,
+    "useLocalhost": true,
+    "refCompiler": {
+      "api-v1": {
+        "baseSpecFile": "api-v1.yaml",
+        "refDirs": [
+          "v1"
+        ]
+      }
+    },
+    "docPublish": {
+      "context": "/api-docs",
+      "templatePath": "test/unit/data/my-template.html",
+      "redocOptions": {
+        "scrollYOffset": 50,
+        "suppressWarnings": true,
+        "lazyRendering": true,
+        "requiredPropsFirst": true
+      }
+    }
+  }
+}
